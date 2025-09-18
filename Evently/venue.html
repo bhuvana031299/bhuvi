@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Venue - Evently Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Animate.css for simple page/hero animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Evently
+  * Template URL: https://bootstrapmade.com/evently-bootstrap-events-template/
+  * Updated: Jul 19 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    :root {
+  --theme: #bbdd09;
+}
+
+.text-theme {
+  color: var(--theme) !important;
+}
+
+.btn-theme {
+  background: var(--theme);
+  border: none;
+  color: #222;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-theme:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.venue-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.venue-hero .hero-bg {
+  background: 
+    linear-gradient(135deg, rgba(187,221,9,0.15), rgba(255,255,255,0.4)),
+    url('assets/img/events/showcase-1.webp');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  inset: 0;
+  filter: blur(6px) brightness(0.8);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.venue-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.perks-grid i {
+  display: block;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+.perks-grid div:hover i {
+  transform: scale(1.2);
+}
+
+    /* Smooth fade on scroll */
+#event-info .section-title {
+  letter-spacing: 0.5px;
+}
+
+/* Perks styling */
+.perk-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.perk-card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+.perk-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* WhatsApp button gradient */
+.btn-gradient {
+  background: linear-gradient(45deg, #25d366, #128c7e);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  color: #fff;
+}
+
+/* Registration cards */
+.reg-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.reg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.reg-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.reg-call {
+  text-decoration: none;
+  font-weight: 600;
+  color: #bbdd09;
+;
+  transition: color 0.3s ease;
+}
+.reg-call:hover {
+  color: #bbdd09;
+;
+}
+
+  </style>
+</head>
+
+
+<body class="venue-page">
+  <!-- New Logo at the top -->
+ 
+
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background:rgba(255,255,255,0.97); box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center" style="gap:10px;">
+        <img src="assets/img/logo-new.svg" alt="Event Logo" style="height:100px; width: 100px; ">
+      </a>
+     
+   <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="venue.html">Event info</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="buy-tickets.html">Buy Tickets</a>
+    </div>
+  </header>
+  
+
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title dark-background animate__animated animate__fadeIn" style="background-image: url('assets/img/g4.jfif'); background-position:center;">
+    <div class="container position-relative">
+      <h1 class="animate__animated animate__fadeInDown">Venue</h1>
+      <p class="animate__animated animate__fadeInUp">Elite Marathon 2025 – Venue Details & Directions</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">Venue</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- End Page Title -->
+
+  <!-- Venue Section -->
+  <section id="venue-2" class="venue-2 section py-5">
+
+    <div class="container">
+
+      <div class="row gy-5 align-items-center">
+
+        <!-- Venue Image -->
+        <div class="col-lg-6">
+          <div class="venue-image position-relative">
+            <img src="assets/img/r2.jpg" alt="Marathon Venue" class="img-fluid rounded">
+            <div class="venue-badge position-absolute top-0 start-0 bg-primary text-white px-3 py-1 rounded-end">
+              <i class="bi bi-geo-alt-fill me-1"></i>
+              Main Venue
+            </div>
+          </div>
+        </div>
+
+        <!-- Venue Content -->
+        <div class="col-lg-6">
+          <div class="venue-content">
+            <h3 style="color: black;">Dharmapuri District Sports Stadium</h3>
+            <div class="venue-address mb-3">
+              <i class="bi bi-geo-alt me-2"></i>
+              District Sports Stadium, Dharmapuri, Tamil Nadu, India
+            </div>
+            <p>The Elite Marathon 2025 will be held at the Dharmapuri District Sports Stadium—a spacious open-air venue equipped to handle marathon logistics, large crowds, and event coordination efficiently. The stadium serves as the starting point, running corridor hub, and celebration zone.</p>
+
+      
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Map Section -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="venue-map">
+            <h4>Venue Location</h4>
+            <div class="map-container mt-3" style="width: 100%; height: 400px;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.123456789!2d78.164!3d12.138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba12345!2sDharmapuri%20District%20Sports%20Stadium!5e0!3m2!1sen!2sin!4v1692630000000!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Info -->
+      <!-- Travel Info Section -->
+
+
+
+    </div>
+
+  </section><!-- /Venue Section -->
+
+</main>
+<!-- HERO / BANNER -->
+<section class="venue-hero py-6">
+  <div class="hero-bg"></div>
+
+  <div class="container text-center text-dark py-5 position-relative">
+    <h2 class="display-5 fw-bold animate__animated animate__fadeInDown text-theme">
+      Event Info — Elite Marathon 2025
+    </h2>
+    <p class="lead mb-4 animate__animated animate__fadeInUp" style="color: white;">
+      Marathon on <strong>Sunday, October 12<sup>th</sup>, 2025</strong> • District Indoor Stadium, Dharmapuri
+    </p>
+
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <a href="register.html" class="btn btn-theme btn-lg animate__animated animate__pulse">Register Now</a>
+  <button id="acknowledgmentBtn2" class="btn btn-outline-dark btn-lg" type="button">Get Acknowledgment</button>
+    </div>
+      <div class="venue-actions mt-3">
+        <div id="ackCard" style="display:none; max-width:350px; margin:1.5rem auto 0 auto; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(0,0,0,0.09); padding:1.5rem;">
+          <h5 style="font-weight:600; color:#222; margin-bottom:1rem;">Get Acknowledgment</h5>
+          <form id="ackForm" autocomplete="off">
+            <div class="mb-3">
+              <label for="ackMobile" style="font-weight:500;">Enter Mobile Number</label>
+              <input type="tel" id="ackMobile" name="ackMobile" class="form-control" placeholder="Enter your mobile number" required pattern="[0-9]{10}">
+            </div>
+            <button type="submit" class="btn btn-success w-100">Submit</button>
+          </form>
+          <div id="ackResult" style="display:none; margin-top:1rem; color:#28a745; font-weight:600;"></div>
+        </div>
+      </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-8">
+        <div class="d-flex justify-content-around perks-grid">
+          <div class="text-center animate__animated animate__fadeInUp">
+            <i class="bi bi-trophy display-6 text-theme"></i>
+            <div>Trophies & Medals</div>
+          </div>
+          <div class="text-center animate__animated animate__fadeInUp" style="animation-delay:.08s">
+            <i class="bi bi-award display-6 text-theme"></i>
+            <div>Certificates</div>
+          </div>
+          <div class="text-center animate__animated animate__fadeInUp" style="animation-delay:.16s">
+            <i class="bi bi-ticket-perforated display-6 text-theme"></i>
+            <div>Race Bib</div>
+          </div>
+          <div class="text-center animate__animated animate__fadeInUp" style="animation-delay:.24s">
+            <i class="bi bi-cup-straw display-6 text-theme"></i>
+            <div>Refreshments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Event Info / Body Content (Tamil heading + participants perks + spot regs) -->
+<!-- Event Info / Body Content -->
+<section class="py-5" id="event-info">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h3 class="section-title animate__animated animate__fadeInDown fw-bold text-primary">
+        பெற்றுக் கொள்வமாறு கேட்டு கொள்கிறோம்.
+      </h3>
+      <p class="lead animate__animated animate__fadeInUp mt-2">
+        Marathon on <strong>Sunday, October 12<sup>th</sup>, 2025</strong>
+      </p>
+    </div>
+
+    <!-- Image + Perks -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="event-image-wrapper animate__animated animate__zoomIn">
+          <img src="assets/img/r2.jpg" alt="Event crowd" class="img-fluid rounded-4 shadow">
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h4 class="h5 text-center text-danger fw-bold mb-4 animate__animated animate__fadeInUp">
+          Participants Will Get
+        </h4>
+
+        <div class="row g-4 justify-content-center mb-4">
+          <div class="col-3 text-center perk-card">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAZlBMVEUAAAD///+3t7dBQUH6+vqqqqrz8/OYmJhNTU329va9vb3s7OzJyckGBgZycnJ1dXXg4OCgoKBUVFQ1NTXX19deXl4vLy8mJibQ0NDDw8N8fHyQkJBsbGwUFBRZWVkPDw+FhYUbGxsul4xKAAADZElEQVR4nO3caZOjIBAGYKJ4n0nMobnM//+Ta3bGxEgDzSzBqdp+P0vnKVFAmBq2+oVhSwOgEAobQmHzA1QW5fiL8ygz/wVjVOJtWYe/vGN7LzH9DUMUH0iMFQ32+qYYLt96/JOo3Gd/c8Y2OH9d7xt0uCEqv7IxyB/Jnw2uJiw8qtkVz59gMerxzfxXi2JXW0fVFXsL6lkv39tU2EcRh6q7C5sl0LcK5m0uFW58wKCyaF790R2prpkHtGInDEuPytZ3qDq7aB7d9AY2uyFGUy0q2IK1H+WV98qDTUP2gW7YUqMS7yAr/Ugkrc6hHn/moBnklah2oyo9pArhhtlZ03CjvMtyFD/6msqPBAArFF47INujvBOlqGaHqDwkDmZdkQQxruVOOmxJUNr7P03Z1t/3K6zzSn/9M1fJiwijOPI2jTlcu34dnLqr8r0Qs4O7EEY1ZrV/HrgHYZTyhbaZyAAlHfhs54ZHHV2ZGDuiUb07VI9FZZhR01J8aFSAUK07E2MtEmU4SP1bdjhU6NLEGDB5AijMdGoxwLpaRHGTac9CzuJUI6JqZyPnV27ip5eIWrs1MbZGoPauUXs9yuEUM0aYagTUyT3qpEOFDqeYMf58qJqjcn0N+5l/1s5RJktsa6nUqNBwkW0nh1CJAjclPh9PheKlvsAnUnIFKlvGxFimQDleILwSKFC6DY2PZSNHNcImoqtcGilqsd6b9d8UlSwwxYzxEwmqXs7EWC1B9UuiehjFF+y9of84iGoLfdPPpWhB1ALLu2lOEIovskB45cAB1AKL8/ccAdRCC4RXShG1xOL8Pa+l+hPldP8HTiui4LMqh7mLqFUdSBYulocvSbnN+jXRTKcZXvfQOZrlRRZUzu/r6YJ49uGQeN28QWF5Uz0SblU3/7sFcYMj9OK3x8u3vMoK3l7zexyIW7HQnidvogmrs/zZNe2LewQesMmO1vJyfLzWqV1UOm6AbUvZKbT8ELL+vs+pbdRXPT+Q//GE8rg26+Phk8xy96XDx2XcK4/cNaftYdrb/pT3Vn0qOXpGoh6xjtKGUIQiFKEIRShCEYpQhCIUoQhFKEIRilCEIhShCEUoQhGKUIQiFKEIRShCEYpQhCIUoQhFKEL936h271vMHvoHCeYo9yEUNoTC5lei/gDyWzvxxrSPSAAAAABJRU5ErkJggg==" class="perk-img" alt="Tshirt">
+            <div class="small mt-2">T-Shirt</div>
+          </div>
+          <div class="col-3 text-center perk-card">
+            <img src="data:image/png;base64,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" class="perk-img" alt="Certificate">
+            <div class="small mt-2">Certificate</div>
+          </div>
+          <div class="col-3 text-center perk-card">
+            <img src="data:image/png;base64,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" class="perk-img" alt="Race Bib">
+            <div class="small mt-2">Race BiB</div>
+          </div>
+          <div class="col-3 text-center perk-card">
+            <img src="data:image/png;base64,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" class="perk-img" alt="Refreshments">
+            <div class="small mt-2">Refreshment</div>
+          </div>
+        </div>
+
+        <p class="text-center mb-3">
+          மேலும் விவரங்களை தெரிந்து கொள்ள கீழ்கண்ட லிங்கை கிளிக் செய்து வாட்ஸ்அப் குழுவில் இணைந்துகொள்ளுங்கள்:
+        </p>
+        <div class="text-center">
+          <a href="#" class="btn btn-gradient px-4 py-2 animate__animated animate__pulse animate__infinite">
+            Join WhatsApp Group
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Spot Registration -->
+    <div class="text-center mb-4">
+      <h3 class="fw-bold text-success animate__animated animate__fadeInUp">
+        SPOT REGISTRATIONS AVAILABLE AT
+      </h3>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="reg-card p-4">
+          <div>
+            <div class="reg-title">1) Deepa Silks</div>
+            <div class="small text-muted">Timing: 10:00 AM to 06:00 PM</div>
+          </div>
+          <a href="tel:+919340000108" class="reg-call">📞 +9193400 00108</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="reg-card p-4">
+          <div>
+            <div class="reg-title">2) Sree Krishnan Gurukulam Nursery and Primary School</div>
+            <div class="small text-muted">Timing: 10:00 AM to 04:30 PM</div>
+          </div>
+          <a href="tel:+919487255075" class="reg-call">📞 +9194872 55075</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="reg-card p-4">
+          <div>
+            <div class="reg-title">3) Jass Computers</div>
+            <div class="small text-muted">Timing: 10:00 AM to 09:00 PM</div>
+          </div>
+          <a href="tel:+9196369487779" class="reg-call">📞 +9163694 87779</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="reg-card p-4">
+          <div>
+            <div class="reg-title">4) Vedha Physio Clinic</div>
+            <div class="small text-muted">Timing: 10:00 AM to 09:00 PM</div>
+          </div>
+          <a href="tel:+919791842543" class="reg-call">📞 +9197918 42543</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+ <footer id="footer" class="footer position-relative dark-background">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+
+      <!-- About / Logo / Contact -->
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Rotary Club Dharmapuri Marathon</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>Rotary Club, Dharmapuri</p>
+          <p>Tamil Nadu, India</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+91 98765 43210</span></p>
+          <p><strong>Email:</strong> <span>info@rotarydharmapuri.org</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Event</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Marathon Info -->
+      <div class="col-lg-3 col-md-3 footer-links">
+        <h4>Marathon Info</h4>
+        <ul>
+          <li><a href="#">Race Categories</a></li>
+          <li><a href="#">Registration</a></li>
+          <li><a href="#">Rules & Guidelines</a></li>
+          <li><a href="#">Sponsors</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+      </div>
+
+      <!-- Location / Map -->
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Event Venue</h4>
+        <p>Government Arts College Ground,<br>Dharmapuri, Tamil Nadu</p>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5417232727457!2d78.15774637480428!3d12.125344091416824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac2fc1b2f6a65f%3A0x9d4dc3dc32d8c4f!2sDharmapuri%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+          width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> 
+      <strong class="px-1 sitename">Rotary Club Dharmapuri Marathon</strong> 
+      <span>All Rights Reserved</span>
+    </p>
+    <div class="credits">
+      Designed with ❤️ for the community
+    </div>
+  </div>
+
+</footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Show/hide acknowledgment card
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn2 = document.getElementById('acknowledgmentBtn2');
+      var card = document.getElementById('ackCard');
+      var form = document.getElementById('ackForm');
+      var result = document.getElementById('ackResult');
+      if(btn2 && card && form && result) {
+        btn2.addEventListener('click', function() {
+          card.style.display = card.style.display === 'none' ? 'block' : 'none';
+          result.style.display = 'none';
+          form.reset();
+        });
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var mobile = document.getElementById('ackMobile').value;
+          if(/^\d{10}$/.test(mobile)) {
+            result.textContent = 'Acknowledgment sent to ' + mobile + '!';
+            result.style.display = 'block';
+            result.style.color = '#28a745';
+          } else {
+            result.textContent = 'Please enter a valid 10-digit mobile number.';
+            result.style.display = 'block';
+            result.style.color = '#e74c3c';
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
+ 

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rotary Club</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Evently
+  * Template URL: https://bootstrapmade.com/evently-bootstrap-events-template/
+  * Updated: Jul 19 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+
+
+
+
+
+<style>
+  :root {
+  --theme-color: #bbdd09;
+  --theme-dark: #a4c600;
+  --text-dark: #222;
+}
+
+.text-theme {
+  color: var(--theme-color);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--theme-color);
+  letter-spacing: 1.5px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+.features-list li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.btn-theme {
+  background-color: var(--theme-color);
+  color: #000;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-theme:hover {
+  background-color: var(--theme-dark);
+  transform: translateY(-3px);
+}
+
+.img-wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+}
+.hero-image {
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+}
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+
+/* Make animations work: ensure animate.css is loaded and that class names are correct */
+
+  :root {
+  --theme-color: #bbdd09;
+  --theme-dark: #9ec407;
+  --text-dark: #333;
+}
+
+.text-theme {
+  color: var(--theme-color);
+}
+
+.btn-theme {
+  background-color: var(--theme-color);
+  color: #000;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-theme:hover {
+  background-color: var(--theme-dark);
+  transform: translateY(-3px);
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem 1rem;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.service-card .icon-box {
+  font-size: 2.5rem;
+}
+
+.gallery-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.benefits-list li i {
+  font-size: 1.2rem;
+}
+
+.benefits-list li {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .service-card, .gallery-card {
+    margin-bottom: 2rem;
+  }
+}
+
+  :root {
+  --theme-color: #bbdd09;
+}
+
+.text-theme {
+  color: var(--theme-color);
+}
+
+.btn-theme {
+  background: var(--theme-color);
+  color: #000;
+  border: none;
+  transition: 0.3s;
+}
+.btn-theme:hover {
+  background: #a9c607;
+  color: #000;
+}
+
+.marathon-hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1520970014086-2208d043f7e4?w=1600') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.runner-img {
+  max-width: 80%;
+  animation: floatY 3s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-15px);}
+  100% { transform: translateY(0px);}
+}
+
+
+@media (max-width: 767px) {
+  #footer .footer-top .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  #footer .footer-links ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  #footer .footer-links ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  #footer .social-links {
+    justify-content: center;
+  }
+
+  #footer iframe {
+    max-width: 100%;
+  }
+}
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+  object-fit: cover;
+  height: 100%;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.05);
+}
+
+.masonry-item.tall {
+  grid-row: span 2;
+}
+
+.masonry-item.wide {
+  grid-column: span 2;
+}
+
+.masonry-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.masonry-item:hover .overlay {
+  opacity: 1;
+}
+
+.masonry-item .overlay h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+  
+</style>
+ 
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top" style="padding-top: 4px; padding-bottom: 4px;">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center" style="gap:10px;">
+  <img src="assets/img/logo-new.svg" alt="Event Logo" style="height:54px; width:auto; max-width:180px; display:block;">
+      </a>
+
+   <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="venue.html">Event info</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+      <!-- <a class="btn-getstarted" href="buy-tickets.html">Buy Tickets</a> -->
+
+    </div>
+  </header>
+
+  <main class="main">
+
+
+    
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="background-overlay"></div>
+
+      <div class="hero-content">
+
+        <div class="container">
+
+          <div class="row justify-content-center text-center">
+
+            <div class="col-lg-10">
+
+              <div class="hero-text">
+
+                <h1 class="hero-title">ROTARY CLUB DHARMAPURI &nbsp;<br> - 2025</h1>
+
+                <p class="hero-subtitle">Rotary Club is a community of leaders and professionals committed to serving society with the motto Service Above Self. We bring people together to exchange ideas, take action, and create lasting impact locally and globally.</p>
+
+                <div class="event-details">
+                  <div class="detail-item">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>March 15-17, 2026</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Grand Palace Hotel, New York</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="countdown-section">
+
+                <h3 class="countdown-label">Event Starts In</h3>
+
+                <div class="countdown d-flex justify-content-center" data-count="2026/03/15">
+                  <div>
+                    <h3 class="count-days">239</h3>
+                    <h4>Days</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-hours">8</h3>
+                    <h4>Hours</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-minutes">53</h3>
+                    <h4>Minutes</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-seconds">23</h3>
+                    <h4>Seconds</h4>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="cta-section">
+
+                <div class="cta-buttons">
+                  <a href="tickets.html" class="btn btn-primary btn-cta">Secure Your Seat</a>
+                  <a href="speakers.html" class="btn btn-secondary btn-cta">View Speakers</a>
+                </div>
+
+                <p class="cta-note">Limited to 200 executive participants • Early bird pricing ends January 31st</p>
+
+              </div>
+
+            </div><!-- End col-lg-10 -->
+
+          </div><!-- End row -->
+<!-- End sponsors-section -->
+
+        </div><!-- End container -->
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+<!-- ======= RUNNING & SPORTS BODY SECTION ======= -->
+<section class="sports-body py-5">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+
+      <!-- Left Content -->
+      <div class="col-lg-6 animate__animated animate__fadeInLeft">
+      
+        <h2 class="section-title fw-bold mb-2">Run For Health. Run For Hope.</h2>
+        <p class="lead mb-2">
+          Every step you take supports Rotary Club Dharmapuri’s mission—promoting community fitness, education, and well-being.
+        </p>
+        
+        <ul class="features-list mb-4">
+          <li><i class="bi bi-check-circle-fill text-theme me-2"></i> Multiple categories: 3K, 5K, 10K & Half Marathon</li>
+          <li><i class="bi bi-check-circle-fill text-theme me-2"></i> Free T-shirt & Medal for all finishers</li>
+          <li><i class="bi bi-check-circle-fill text-theme me-2"></i> Hydration & Medical Aid stations</li>
+        </ul>
+        <a href="#register" class="btn btn-theme btn-lg">Register Now</a>
+      </div>
+
+      <!-- Right Image Content -->
+      <div class="col-lg-6 text-center animate__animated animate__fadeInRight">
+        <div class="img-wrapper">
+          <img src="assets/img/MA.jpg" class="img-fluid rounded shadow-lg hero-image" alt="Running Event">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- =================== MARATHON HERO SECTION =================== -->
+<section class="marathon-hero d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Content -->
+      <div class="col-lg-6 text-white animate__animated animate__fadeInLeft">
+        <h5 class="text-uppercase fw-bold mb-3 text-theme">Rotary Club Dharmapuri</h5>
+        <h1 class="display-4 fw-bold mb-3">Rotary Dharmapuri <br> Marathon 2025</h1>
+        <p class="lead mb-4">
+          Join thousands of runners as we run for health, hope, and humanity. 
+          Every step supports education, health camps, and local development.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#register" class="btn btn-theme px-4 py-2 fw-bold shadow">Register Now</a>
+          <a href="#about" class="btn btn-outline-light px-4 py-2 fw-bold">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6 text-center animate__animated animate__fadeInRight">
+        <img src="assets\img\gallery\BT5A0805.JPG"
+             class="runner-img img-fluid" alt="Runner">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+   
+    <!-- Tickets Section -->
+    <!-- <section id="tickets" class="tickets section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="ticket-card">
+              <div class="ticket-header">
+                <h3>General Admission</h3>
+                <div class="ticket-price">
+                  <span class="currency">$</span>
+                  <span class="amount">149</span>
+                  <span class="period">/ticket</span>
+                </div>
+                <p class="ticket-duration">3-Day Access</p>
+              </div>
+              <div class="ticket-body">
+                <ul class="ticket-features">
+                  <li><i class="bi bi-check-circle-fill"></i>Access to all conference sessions</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Welcome reception networking</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Coffee breaks and lunch included</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Digital conference materials</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Certificate of attendance</li>
+                </ul>
+              </div>
+              <div class="ticket-footer">
+                <a href="buy-tickets.html" class="btn btn-ticket">Register Now</a>
+                <p class="availability-info">250 tickets remaining</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="ticket-card featured">
+              <div class="popular-badge">Most Popular</div>
+              <div class="ticket-header">
+                <h3>VIP Experience</h3>
+                <div class="ticket-price">
+                  <span class="currency">$</span>
+                  <span class="amount">299</span>
+                  <span class="period">/ticket</span>
+                </div>
+                <p class="ticket-duration">3-Day Premium Access</p>
+              </div>
+              <div class="ticket-body">
+                <ul class="ticket-features">
+                  <li><i class="bi bi-check-circle-fill"></i>All General Admission benefits</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Reserved front row seating</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Exclusive VIP networking lounge</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Meet &amp; greet with keynote speakers</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Premium swag bag worth $150</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Private dinner with industry leaders</li>
+                </ul>
+              </div>
+              <div class="ticket-footer">
+                <a href="buy-tickets.html" class="btn btn-ticket">Get VIP Access</a>
+                <p class="availability-info">Limited to 50 attendees</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="ticket-card">
+              <div class="ticket-header">
+                <h3>Student Pass</h3>
+                <div class="ticket-price">
+                  <span class="original-price">$149</span>
+                  <span class="currency">$</span>
+                  <span class="amount">79</span>
+                  <span class="period">/ticket</span>
+                </div>
+                <p class="ticket-duration">3-Day Student Access</p>
+              </div>
+              <div class="ticket-body">
+                <ul class="ticket-features">
+                  <li><i class="bi bi-check-circle-fill"></i>All conference sessions access</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Student networking events</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Career fair participation</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Mentorship program eligibility</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Student resource kit</li>
+                </ul>
+              </div>
+              <div class="ticket-footer">
+                <a href="buy-tickets.html" class="btn btn-ticket">Student Registration</a>
+                <p class="availability-info">Valid student ID required</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="ticket-info-bar">
+              <div class="countdown-info">
+                <h4><i class="bi bi-clock"></i> Early Bird Pricing Ends Soon!</h4>
+                <div class="countdown d-flex justify-content-center" data-count="2026/12/15">
+                  <div>
+                    <h3 class="count-days"></h3>
+                    <h4>Days</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-hours"></h3>
+                    <h4>Hours</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-minutes"></h3>
+                    <h4>Minutes</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-seconds"></h3>
+                    <h4>Seconds</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="support-info">
+                <p><strong>Need help choosing?</strong> Contact our support team</p>
+                <a href="mailto:tickets@example.com" class="contact-link">tickets@example.com</a>
+                <span class="divider">|</span>
+                <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- /Tickets Section -->
+
+    <!-- Sponsors Section -->
+  
+
+      
+
+       
+
+
+    </section>
+    
+      </main>
+      <!-- ====== BODY CONTENT START ====== -->
+
+<!-- FEATURES / EVENT HIGHLIGHTS -->
+<!-- <section class="features py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Event Highlights</h2>
+      <p class="text-muted">Experience the spirit of the Rotary Dharmapuri Marathon</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+        <div class="feature-card p-4">
+          <div class="icon mb-3"><i class="bi bi-calendar2-event"></i></div>
+          <h5>Event Date</h5>
+          <p>10 November 2025</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="feature-card p-4">
+          <div class="icon mb-3"><i class="bi bi-geo-alt-fill"></i></div>
+          <h5>Location</h5>
+          <p>Rotary Ground, Dharmapuri</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="feature-card p-4">
+          <div class="icon mb-3"><i class="bi bi-gift"></i></div>
+          <h5>Perks</h5>
+          <p>T-Shirt · Medal · Refreshments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- GALLERY / PREVIOUS EVENTS -->
+<section class="gallery py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Glimpses of Previous Marathons</h2>
+      <p class="text-muted">Celebrating every stride with energy and passion</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 animate__animated animate__zoomIn">
+        <img src="assets\img\gallery\BT5A0805.JPG" class="img-fluid rounded-4 gallery-img" alt="Gallery 1">
+      </div>
+      <div class="col-md-4 animate__animated animate__zoomIn animate__delay-1s">
+        <img src="assets\img\gallery\BT5A0768.JPG" class="img-fluid rounded-4 gallery-img" alt="Gallery 2">
+      </div>
+      <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
+        <img src="assets\img\gallery\BT5A0979.JPG" class="img-fluid rounded-4 gallery-img" alt="Gallery 3">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ====== BODY CONTENT END ====== -->
+
+
+<!-- ====== CSS STYLES ====== -->
+<style>
+:root {
+  --theme-color: #bbdd09;
+  --theme-dark: #9ec407;
+}
+
+.text-theme { color: var(--theme-color); }
+
+.btn-theme {
+  background: var(--theme-color);
+  color: #000;
+  border-radius: 30px;
+  padding: 0.7rem 2rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.btn-theme:hover {
+  background: var(--theme-dark);
+  color: #000;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.feature-card .icon {
+  font-size: 2.5rem;
+  color: var(--theme-color);
+}
+
+.gallery-img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.floating-img {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0px);}
+  50% { transform: translateY(-15px);}
+}
+</style>
+
+<!-- ====== REQUIRED LIBRARIES ====== -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<!-- ====== GALLERY SECTION ====== -->
+<!-- <section class="gallery py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Gallery</h2>
+      <p class="text-muted">Memories from past runs & community moments</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 animate__animated animate__zoomIn">
+        <div class="gallery-card overflow-hidden rounded">
+          <img src="https://picsum.photos/600/400?seed=1" class="img-fluid gallery-img" alt="gallery 1">
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__zoomIn animate__delay-1s">
+        <div class="gallery-card overflow-hidden rounded">
+          <img src="https://picsum.photos/600/400?seed=2" class="img-fluid gallery-img" alt="gallery 2">
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
+        <div class="gallery-card overflow-hidden rounded">
+          <img src="https://picsum.photos/600/400?seed=3" class="img-fluid gallery-img" alt="gallery 3">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ====== WHY JOIN / BENEFITS SECTION ====== -->
+
+<!-- ======= RUNNING & SPORTS BODY SECTION ======= -->
+
+<!-- ====== FEATURES / SERVICES SECTION ====== -->
+<section class="services py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What You’ll Get</h2>
+      <p class="text-muted">The Rotary Dharmapuri Marathon offers these for participants</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 animate__animated animate__fadeInUp">
+        <div class="service-card p-4 rounded shadow">
+          <div class="icon-box mb-3 text-theme">
+            <i class="bi bi-stars fs-2"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Free T-Shirt</h5>
+          <p class="">Premium quality marathon t-shirt included with registration.</p>
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="service-card p-4 rounded shadow">
+          <div class="icon-box mb-3 text-theme">
+            <i class="bi bi-trophy fs-2"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Medal & Awards</h5>
+          <p class="">Medals for all finishers and prizes for winners in different categories.</p>
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="service-card p-4 rounded shadow">
+          <div class="icon-box mb-3 text-theme">
+            <i class="bi bi-droplet-half fs-2"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Hydration + First Aid</h5>
+          <p class="">Water stations and medical aid throughout the route for safety.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <footer id="footer" class="footer position-relative dark-background">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+
+      <!-- About / Logo / Contact -->
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Rotary Club Dharmapuri Marathon</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>Rotary Club, Dharmapuri</p>
+          <p>Tamil Nadu, India</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+91 98765 43210</span></p>
+          <p><strong>Email:</strong> <span>info@rotarydharmapuri.org</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Event</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Marathon Info -->
+      <div class="col-lg-3 col-md-3 footer-links">
+        <h4>Marathon Info</h4>
+        <ul>
+          <li><a href="#">Race Categories</a></li>
+          <li><a href="#">Registration</a></li>
+          <li><a href="#">Rules & Guidelines</a></li>
+          <li><a href="#">Sponsors</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+      </div>
+
+      <!-- Location / Map -->
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Event Venue</h4>
+        <p>Government Arts College Ground,<br>Dharmapuri, Tamil Nadu</p>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5417232727457!2d78.15774637480428!3d12.125344091416824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac2fc1b2f6a65f%3A0x9d4dc3dc32d8c4f!2sDharmapuri%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+          width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> 
+      <strong class="px-1 sitename">Rotary Club Dharmapuri Marathon</strong> 
+      <span>All Rights Reserved</span>
+    </p>
+    <div class="credits">
+      Designed with ❤️ for the community
+    </div>
+  </div>
+
+</footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
