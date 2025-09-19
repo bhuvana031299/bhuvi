@@ -12,8 +12,9 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        body {
+
+        /* Page-level containers */
+        .registration-container {
             background: linear-gradient(135deg, #6b8e23, #556b2f);
             min-height: 100vh;
             display: flex;
@@ -21,7 +22,17 @@
             align-items: center;
             padding: 15px;
         }
-        
+
+        /* Poster image shown above the form */
+        .page-poster {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
         .container {
             display: flex;
             width: 100%;
@@ -79,12 +90,43 @@
             margin-bottom: 15px;
         }
         
+        /* Form area inside the white card. Keep it centered and allow the outer card to scroll if needed */
         .form-section {
-            flex: 1.2;
-            padding: 20px;
+            padding: 20px 28px;
             background: white;
-            overflow-y: auto;
+            display: block;
+            max-width: 820px;
+            margin: 0 auto;
+            overflow: visible;
         }
+
+    /* When used inside .registration-container we want the white card to stack vertically and be centered */
+    .registration-container > .container { min-height: auto; box-shadow: 0 10px 25px rgba(0,0,0,0.08); flex-direction: column; align-items: center; max-height: calc(100vh - 48px); overflow:auto; padding:0; margin: 18px auto; }
+
+    /* Poster wrap so the image sits flush with the card and has matching rounded top corners */
+    .poster-wrap { width:100%; border-top-left-radius:12px; border-top-right-radius:12px; overflow:hidden; }
+
+    /* Slightly increase horizontal padding so form fields align nicer with poster edges */
+    .form-section { padding: 28px 36px; display:block; overflow:visible; max-height:none; }
+
+        /* Card wrapper that centers the form inside the white column */
+        .form-card {
+            width: 100%;
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 40px;
+        }
+
+        /* internal form constrained to a comfortable reading width */
+        .form-card form { display:block; width:100%; max-width:720px; }
+
+        /* Ensure inputs expand to full width inside the centered card */
+        .form-card .form-row, .form-card .form-group { width: 100%; }
+        .form-card .form-row { display:flex; gap:15px; }
+        .form-card .form-group input, .form-card .form-group select { width:100%; }
         
         .header {
             text-align: center;
@@ -416,25 +458,66 @@
             line-height: 1.5;
             color: #555;
         }
+
+        /* Consent row layout: left (checkbox + label) and right (link text) */
+        .consent-group { width: 100%; }
+        .consent-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-top:1px solid rgba(160,170,150,0.08); }
+        .consent-left { display:flex; align-items:center; gap:10px; flex:1 1 auto; min-width:0; }
+        .consent-left input[type="checkbox"] { width:18px; height:18px; accent-color:#bbdd09; flex:0 0 auto; }
+        .consent-left label { margin:0; font-weight:600; color:#333; line-height:1.2; }
+        .consent-right { flex:0 0 auto; text-align:right; white-space:nowrap; }
+        .consent-right a { color:#0a58ca; text-decoration:underline; margin-right:6px; }
+        .consent-right .small { color:#444; font-size:0.95rem; margin-left:6px; }
+
+        /* On smaller screens stack the link under the checkbox/label for readability */
+        @media (max-width: 720px) {
+            .consent-row { flex-direction:column; align-items:flex-start; gap:6px; }
+            .consent-right { text-align:left; white-space:normal; }
+            .consent-left label { font-size:0.95rem; }
+        }
+
+        /* Layout fixes: lock registration area to viewport height and make form scroll inside column */
+        .registration-container { min-height: 100vh; align-items: stretch; gap: 20px; }
+
+        /* Poster image full cover in its column */
+        .poster-img { width:100%; height:100%; object-fit: cover; display:block; border-radius:8px; }
+    .page-poster { width:100%; height:340px; object-fit:cover; display:block; border-radius:10px; margin-bottom:18px; }
+
+    /* Ensure form area has a comfortable width and is centered */
+    .form-section { max-width: 820px; margin: 0 auto; padding-right: 8px; overflow: visible; }
+
+        /* Fee boxes layout */
+        .fee-details { gap:12px; justify-content: center; }
+        .fee-box { width: calc(50% - 12px); }
+
+        @media (max-width: 900px) {
+            .registration-container { min-height: auto; }
+            .form-section { padding: 20px; max-width: 100%; height: auto; }
+            .poster-img { height: 220px; object-fit: cover; }
+            .fee-box { width: 90%; }
+            .form-card .form-row { flex-direction: column; gap: 0; }
+        }
     </style>
 </head>
 <body>
     <div class="blur-background"></div>
-    
-    <div class="container d-flex flex-wrap align-items-stretch" style="min-height: 80vh;">
- 
-      
-   
-        
-        <div class="form-section">
-            <div class="header">
-                <h1>REGISTRATION FORM 2025</h1>
-                <p>Please fill out all the required fields *</p>
+
+    <div class="registration-container">
+        <div class="container" style="width:100%; max-width:1100px;">
+            <!-- Poster at top of the white card -->
+            <div class="poster-wrap" style="width:100%;">
+                <img src="assets/img/dee.jpg" alt="Event Poster" class="page-poster">
             </div>
 
-           
-            
-            <form id="registrationForm">
+            <!-- Form section -->
+            <div class="form-section">
+                <div class="header">
+                    <h1>REGISTRATION FORM 2025</h1>
+                    <p>Please fill out all the required fields *</p>
+                </div>
+
+                <div class="form-card">
+                    <form id="registrationForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="fullName">Full Name *</label>
@@ -518,18 +601,30 @@
                 
                 <div class="terms">
                     <h3>Terms & Conditions:</h3>
-                    <ul>
-                        <li>Kindly bring a xerox copy of Aadhar card on Marathon day.</li>
-                        <li>Follow all the rules created by RC DHARMAPURI ELITE.</li>
-                        <li>If you engage in any form of cheating or misbehaving with the organizing team, it can lead to disqualification.</li>
-                        <li>The paid amount will not be refunded.</li>
-                        <li>RC DHARMAPURI ELITE has all rights reserved.</li>
-                    </ul>
-                    
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                            <label for="agreeTerms">I agree to the terms and conditions</label>
+                 
+
+                    <!-- Two separate consent items: General Terms and Medical Declaration -->
+                    <div class="radio-group consent-group" style="flex-direction:column; gap:12px; margin-top:12px;">
+                        <div class="consent-row">
+                            <div class="consent-left">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <label for="agreeTerms">I agree to the General Terms &amp; Conditions</label>
+                            </div>
+                            <div class="consent-right">
+                                <a href="#" class="open-modal" data-modal="modal-terms">click here</a>
+                                <span class="small">to read the terms &amp; conditions</span>
+                            </div>
+                        </div>
+
+                        <div class="consent-row">
+                            <div class="consent-left">
+                                <input type="checkbox" id="agreeMedical" name="agreeMedical" required>
+                                <label for="agreeMedical">I have read and accepted the Medical Declaration</label>
+                            </div>
+                            <div class="consent-right">
+                                <a href="#" class="open-modal" data-modal="modal-medical">click here</a>
+                                <span class="small">to read the medical declaration</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -550,51 +645,69 @@
                     <p>For enquiries and details: <a href="tel:9884477153">9884477153</a></p>
                 </div>
                 
-                <button type="submit" class="submit-btn">Submit Registration</button>
-            </form>
-             <div class="tamil-content">
-                <h3>விழிப்புணர்வு எலைட் மாரத்தான்</h3>
-                <p>தர்மபுரி எலைட் ரோட்டரி சங்கம் மற்றும் தீபா சில்க்ஸ் & ரெடிமேட்ஸ் இணைந்து நடத்தும் விழிப்புணர்வு எலைட் மாரத்தான்</p>
-                <p>அக்டோபர் மாதம் 12ஆம் தேதி (12.10.2025, ஞாயிற்றுக்கிழமை) நடக்கவிருக்கும் விழிப்புணர்வு 3rd எலைட் மாரத்தானில் - 2025 வேண்டாம் போதை (Say No to Drugs) கலந்து கொள்ள....</p>
-                <p>கட்டணம்: ₹199 மட்டுமே</p>
-                <p>பங்கேற்கும் அனைவருக்கும் டி-ஷர்ட் 👕, சான்றிதழ் 📜, ஸ்னாக்ஸ் 🍪 வழங்கப்படும் மற்றும் பண விருது வழங்கப்படும்.</p>
-            </div>
-
-            <div class="prizes">
-                <h3>பரிசுகள்</h3>
-                <div class="prize-list">
-                    <div class="prize-item">
-                        <h4>1st Place</h4>
-                        <p>Rs. 5,000 + 🏆 + 🥇 + 📜</p>
-                    </div>
-                    <div class="prize-item">
-                        <h4>2nd Place</h4>
-                        <p>Rs. 4,000 + 🏆 + 🥈 + 📜</p>
-                    </div>
-                    <div class="prize-item">
-                        <h4>3rd Place</h4>
-                        <p>Rs. 3,000 + 🏆 + 🥉 + 📜</p>
-                    </div>
-                    <div class="prize-item">
-                        <h4>4th to 10th Place</h4>
-                        <p>Each Rs. 1,500 + 🎖 + 📜</p>
-                    </div>
-                    <div class="prize-item">
-                        <h4>11th to 25th Place</h4>
-                        <p>Each Rs. 1000 + 🎖 + 📜</p>
-                    </div>
+                <div style="text-align:center; margin-top:12px;">
+                    <button type="submit" class="submit-btn" style="max-width:320px;">Submit Registration</button>
                 </div>
-                <p style="text-align: center; margin-top: 15px; font-weight: bold;">
-                    🏃🏼‍♂ ஆண்- 25, 🏃‍♀ பெண்- 25 இருபாலருக்கும் தனித்தனியாக பரிசுகள் வழங்கப்படும்.
-                </p>
+            </form>
+        </div>
+
+        <!-- Tamil content and prizes below the form inside the card -->
+        <div class="tamil-content">
+            <h3>விழிப்புணர்வு எலைட் மாரத்தான்</h3>
+            <p>தர்மபுரி எலைட் ரோட்டரி சங்கம் மற்றும் தீபா சில்க்ஸ் & ரெடிமேட்ஸ் இணைந்து நடத்தும் விழிப்புணர்வு எலைட் மாரத்தான்</p>
+            <p>அக்டோபர் மாதம் 12ஆம் தேதி (12.10.2025, ஞாயிற்றுக்கிழமை) நடக்கவிருக்கும் விழிப்புணர்வு 3rd எலைட் மாரத்தானில் - 2025 வேண்டாம் போதை (Say No to Drugs) கலந்து கொள்ள....</p>
+            <p>கட்டணம்: ₹199 மட்டுமே</p>
+            <p>பங்கேற்கும் அனைவருக்கும் டி-ஷர்ட் 👕, சான்றிதழ் 📜, ஸ்னாக்ஸ் 🍪 வழங்கப்படும் மற்றும் பண விருது வழங்கப்படும்.</p>
+        </div>
+
+        <div class="prizes">
+            <h3>பரிசுகள்</h3>
+            <div class="prize-list">
+                <div class="prize-item">
+                    <h4>1st Place</h4>
+                    <p>Rs. 5,000 + 🏆 + 🥇 + 📜</p>
+                </div>
+                <div class="prize-item">
+                    <h4>2nd Place</h4>
+                    <p>Rs. 4,000 + 🏆 + 🥈 + 📜</p>
+                </div>
+                <div class="prize-item">
+                    <h4>3rd Place</h4>
+                    <p>Rs. 3,000 + 🏆 + 🥉 + 📜</p>
+                </div>
+                <div class="prize-item">
+                    <h4>4th to 10th Place</h4>
+                    <p>Each Rs. 1,500 + 🎖 + 📜</p>
+                </div>
+                <div class="prize-item">
+                    <h4>11th to 25th Place</h4>
+                    <p>Each Rs. 1000 + 🎖 + 📜</p>
+                </div>
             </div>
+            <p style="text-align: center; margin-top: 15px; font-weight: bold;">
+                🏃🏼‍♂ ஆண்- 25, 🏃‍♀ பெண்- 25 இருபாலருக்கும் தனித்தனியாக பரிசுகள் வழங்கப்படும்.
+            </p>
+        </div>
         </div>
     </div>
-    
 
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            // Ensure both consent checkboxes are checked
+            const agreeTerms = document.getElementById('agreeTerms');
+            const agreeMedical = document.getElementById('agreeMedical');
+            if (!agreeTerms.checked) {
+                alert('Please agree to the General Terms & Conditions before submitting.');
+                agreeTerms.focus();
+                return;
+            }
+            if (!agreeMedical.checked) {
+                alert('Please accept the Medical Declaration before submitting.');
+                agreeMedical.focus();
+                return;
+            }
+
             alert('Form submitted successfully! Thank you for your registration.');
             this.reset();
         });
@@ -619,6 +732,94 @@
             observer.observe(section);
         });
     </script>
-     
+
+    <!-- Modals for Terms and Medical Declaration -->
+    <div id="modal-terms" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-terms-title">
+            <button class="modal-close" aria-label="Close">×</button>
+            <h2 id="modal-terms-title">General Terms & Conditions</h2>
+            <div class="modal-body">
+                <p>Kindly bring a xerox copy of Aadhar card on Marathon day.</p>
+                <p>Follow all the rules created by RC DHARMAPURI ELITE.</p>
+                <p>If you engage in any form of cheating or misbehaving with the organizing team, it can lead to disqualification.</p>
+                <p>The paid amount will not be refunded.</p>
+                <p>RC DHARMAPURI ELITE has all rights reserved.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn modal-accept" data-target-checkbox="agreeTerms">I Accept</button>
+                <button class="btn modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-medical" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-medical-title">
+            <button class="modal-close" aria-label="Close">×</button>
+            <h2 id="modal-medical-title">Medical Declaration</h2>
+            <div class="modal-body">
+                <p>I declare that I am physically fit to participate in the marathon. I do not suffer from any medical condition that would endanger me or others during the event. I understand that the organizers are not liable for any medical expenses incurred.</p>
+                <p>Please consult your physician if you have any doubts. Carry necessary medication if required.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn modal-accept" data-target-checkbox="agreeMedical">I Accept</button>
+                <button class="btn modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Modal base styles */
+        .modal { display: none; position: fixed; inset: 0; z-index: 9999; }
+        .modal[aria-hidden="false"] { display: block; }
+        .modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+        .modal-panel { position: relative; width: 90%; max-width: 720px; margin: 6vh auto; background: #fff; border-radius: 10px; padding: 18px; box-shadow: 0 12px 30px rgba(0,0,0,0.3); z-index: 2; }
+        .modal-panel h2 { margin-top: 0; color: #333; }
+        .modal-body { max-height: 50vh; overflow: auto; margin: 12px 0; color: #444; line-height: 1.6; }
+        .modal-actions { display:flex; gap:10px; justify-content:flex-end; }
+        .modal-close { position: absolute; top: 8px; right: 10px; background: transparent; border: none; font-size: 22px; cursor: pointer; }
+        .btn { padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer; }
+        .modal-accept { background: #bbdd09; color: #111; font-weight:600; }
+        .modal-close.btn { background: #eee; }
+        .open-modal { color: #0a58ca; text-decoration: underline; cursor: pointer; }
+    </style>
+
+    <script>
+        // Modal open/close handlers
+        document.querySelectorAll('.open-modal').forEach(link => {
+            link.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                const id = link.getAttribute('data-modal');
+                const modal = document.getElementById(id);
+                if (modal) {
+                    modal.setAttribute('aria-hidden', 'false');
+                    // trap focus could be added later; for now focus the first button
+                    const closeBtn = modal.querySelector('.modal-close');
+                    if (closeBtn) closeBtn.focus();
+                }
+            });
+        });
+
+        // Close buttons and backdrop click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (ev) => {
+                if (ev.target === modal || ev.target.classList.contains('modal-close')) {
+                    modal.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
+
+        // Accept buttons set the related checkbox and close modal
+        document.querySelectorAll('.modal-accept').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const checkboxId = btn.getAttribute('data-target-checkbox');
+                const cb = document.getElementById(checkboxId);
+                if (cb) cb.checked = true;
+                const modal = btn.closest('.modal');
+                if (modal) modal.setAttribute('aria-hidden', 'true');
+            });
+        });
+    </script>
 </body>
 </html>
