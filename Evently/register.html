@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ta">
 <head>
@@ -6,6 +7,86 @@
     <title>விழிப்புணர்வு எலைட் மாரத்தான் - 2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        
+        /* ===== Mobile View Styles for Registration Form ===== */
+@media (max-width: 768px) {
+
+    /* Stack form rows vertically */
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Make form groups full width */
+    .form-group {
+        width: 100% !important;
+    }
+
+    /* Inputs & dropdowns full width and touch-friendly */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    select {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    /* Radio buttons and checkboxes stack nicely */
+    .radio-group, 
+    .radio-group.consent-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Fee boxes stack vertically */
+    .fee-details {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .fee-box {
+        width: 100%;
+    }
+
+    /* Note under T-shirt dropdown spans full width */
+    .form-group .note {
+        width: 100%;
+        margin-top: 6px;
+        font-size: 14px;
+    }
+
+    /* Submit button responsive */
+    .submit-btn {
+        width: 100%;
+        max-width: 320px;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    /* Tamil content spacing */
+    .tamil-content, 
+    .prizes {
+        padding: 10px 0;
+    }
+
+    /* Prize items stack vertically */
+    .prize-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Consent links spacing */
+    .consent-right {
+        margin-top: 4px;
+        font-size: 13px;
+    }
+}
+
         * {
             margin: 0;
             padding: 0;
@@ -148,6 +229,7 @@
             display: flex;
             gap: 15px;
             margin-bottom: 15px;
+            flex-wrap: wrap; /* allow items to wrap on small screens */
         }
         
         .form-group {
@@ -470,13 +552,19 @@
         .consent-right .small { color:#444; font-size:0.95rem; margin-left:6px; }
 
         /* On smaller screens stack the link under the checkbox/label for readability */
-        @media (max-width: 720px) {
+        @media (max-width: 900px) {
             .consent-row { flex-direction:column; align-items:flex-start; gap:6px; }
             .consent-right { text-align:left; white-space:normal; }
             .consent-left label { font-size:0.95rem; }
         }
 
+            .form-row > .form-group { flex-basis: 100%; }
         /* Layout fixes: lock registration area to viewport height and make form scroll inside column */
+
+        /* Desktop: two-column layout where appropriate */
+        @media (min-width: 901px) {
+            .form-row > .form-group { flex-basis: calc(50% - 7.5px); }
+        }
         .registration-container { min-height: 100vh; align-items: stretch; gap: 20px; }
 
         /* Poster image full cover in its column */
@@ -496,6 +584,23 @@
             .poster-img { height: 220px; object-fit: cover; }
             .fee-box { width: 90%; }
             .form-card .form-row { flex-direction: column; gap: 0; }
+                /* ensure form columns don't overflow on mobile */
+                .form-card .form-row > .form-group { min-width: 0; }
+                select, input { box-sizing: border-box; }
+                select { -webkit-appearance: menulist-button; }
+                /* Make selects consistent and full-width on all devices */
+                select {
+                    width: 100%;
+                    padding: 10px;
+                    background: #fff;
+                    border-radius: 6px;
+                    z-index: 10; /* ensure dropdown overlays properly on some mobile browsers */
+                }
+                /* Prevent select dropdown from being clipped on smaller screens */
+                @media (max-width: 480px) {
+                    select { font-size: 16px; }
+                    .form-card { padding-left: 12px; padding-right: 12px; }
+                }
         }
     </style>
 </head>
@@ -518,138 +623,121 @@
 
                 <div class="form-card">
                     <form id="registrationForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Public / Student *</label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" id="public" name="type" value="public" required>
-                                <label for="public">Public</label>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
                             </div>
-                            <div class="radio-option">
-                                <input type="radio" id="student" name="type" value="student">
-                                <label for="student">Student</label>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email address">
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="age">Age *</label>
-                        <input type="number" id="age" name="age" required placeholder="Enter your age">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="mobile">Mobile Number *</label>
-                        <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="gender">Gender *</label>
-                        <select id="gender" name="gender" required>
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="address">Address *</label>
-                    <input type="text" id="address" name="address" required placeholder="Enter your full address">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="tshirtSize">T-shirt Size *</label>
-                        <select id="tshirtSize" name="tshirtSize" required>
-                            <option value="">Select T-shirt Size</option>
-                            <option value="s">Small (S)</option>
-                            <option value="m">Medium (M)</option>
-                            <option value="l">Large (L)</option>
-                            <option value="xl">Extra Large (XL)</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                        <p class="note">T-shirts will be distributed to school/college students on producing a valid school/college ID.</p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="exploreType">Explore Type *</label>
-                        <select id="exploreType" name="exploreType" required>
-                            <option value="">Select Explore Type</option>
-                            <option value="5k">5K Run</option>
-                            <option value="10k">10K Run</option>
-                            <option value="half-marathon">Half Marathon</option>
-                            <option value="marathon">Full Marathon</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="terms">
-                    <h3>Terms & Conditions:</h3>
-                 
-
-                    <!-- Two separate consent items: General Terms and Medical Declaration -->
-                    <div class="radio-group consent-group" style="flex-direction:column; gap:12px; margin-top:12px;">
-                        <div class="consent-row">
-                            <div class="consent-left">
-                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                                <label for="agreeTerms">I agree to the General Terms &amp; Conditions</label>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Public / Student *</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="public" name="type" value="public" required>
+                                        <label for="public">Public</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="student" name="type" value="student">
+                                        <label for="student">Student</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="consent-right">
-                                <a href="#" class="open-modal" data-modal="modal-terms">click here</a>
-                                <span class="small">to read the terms &amp; conditions</span>
+                            <div class="form-group">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" name="age" required placeholder="Enter your age">
                             </div>
                         </div>
-
-                        <div class="consent-row">
-                            <div class="consent-left">
-                                <input type="checkbox" id="agreeMedical" name="agreeMedical" required>
-                                <label for="agreeMedical">I have read and accepted the Medical Declaration</label>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number *</label>
+                                <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number">
                             </div>
-                            <div class="consent-right">
-                                <a href="#" class="open-modal" data-modal="modal-medical">click here</a>
-                                <span class="small">to read the medical declaration</span>
+                            <div class="form-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Will not others</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required placeholder="Enter your full address">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tshirtSize">T-shirt Size *</label>
+                                <select id="tshirtSize" name="tshirtSize" required>
+                                 
+                                </select>
+                                <div class="form-row">
+                                    <div class="form-group" style="flex:1 1 100%; ">
+                                        <p class="note" style="color: red;">* T-shirts will be distributed to school/college students on producing a valid school/college ID.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exploreType">Explore Type *</label>
+                                <select id="exploreType" name="exploreType" required>
+                                    <option value="">Select</option>
+                                    <option value="referral">Friend's Referral</option>
+                                    <option value="fm">FM</option>
+                                    <option value="notice">Notice</option>
+                                    <option value="flex">Flex Board</option>
+                                    <option value="auto">Auto or Bus</option>
+                                    <option value="social">Social Media</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="terms">
+                            <h3>Terms & Conditions:</h3>
+                            <div class="radio-group consent-group" style="flex-direction:column; gap:12px; margin-top:12px;">
+                                <div class="consent-row">
+                                    <div class="consent-left">
+                                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                        <label for="agreeTerms">I agree to the General Terms &amp; Conditions</label>
+                                    </div>
+                                    <div class="consent-right">
+                                        <a href="#" class="open-modal" data-modal="modal-terms">click here</a>
+                                        <span class="small">to read the terms &amp; conditions</span>
+                                    </div>
+                                </div>
+                                <div class="consent-row">
+                                    <div class="consent-left">
+                                        <input type="checkbox" id="agreeMedical" name="agreeMedical" required>
+                                        <label for="agreeMedical">I have read and accepted the Medical Declaration</label>
+                                    </div>
+                                    <div class="consent-right">
+                                        <a href="#" class="open-modal" data-modal="modal-medical">click here</a>
+                                        <span class="small">to read the medical declaration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fee-details">
+                            <div class="fee-box">
+                                <h3>Public Entry Fee</h3>
+                                <div class="fee-amount">₹199</div>
+                            </div>
+                            <div class="fee-box">
+                                <h3>Student Entry Fee</h3>
+                                <div class="fee-amount">₹99</div>
+                            </div>
+                        </div>
+                        <div class="enquiry">
+                            <p>For enquiries and details: <a href="tel:9884477153">9884477153</a></p>
+                        </div>
+                        <div style="text-align:center; margin-top:12px;">
+                            <button type="submit" class="submit-btn" style="max-width:320px; text-align: center;">Submit Registration</button>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="fee-details">
-                    <div class="fee-box">
-                        <h3>Public Entry Fee</h3>
-                        <div class="fee-amount">₹199</div>
-                    </div>
-                    
-                    <div class="fee-box">
-                        <h3>Student Entry Fee</h3>
-                        <div class="fee-amount">₹99</div>
-                    </div>
-                </div>
-                
-                <div class="enquiry">
-                    <p>For enquiries and details: <a href="tel:9884477153">9884477153</a></p>
-                </div>
-                
-                <div style="text-align:center; margin-top:12px;">
-                    <button type="submit" class="submit-btn" style="max-width:320px;">Submit Registration</button>
-                </div>
-            </form>
-        </div>
 
         <!-- Tamil content and prizes below the form inside the card -->
         <div class="tamil-content">
